@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Horarios TM RCIA 1 ❤️</title>
   <link rel="stylesheet" href="style.css">
   <style>
@@ -16,17 +17,19 @@
     h1 {
       color: #d63384;
       margin-bottom: 30px;
+      font-size: 1.8em;
     }
 
     table {
       margin: 0 auto;
       border-collapse: collapse;
-      width: 90%;
+      width: 100%;
       max-width: 800px;
       background-color: white;
       border: 2px solid #d63384;
       border-radius: 10px;
       overflow: hidden;
+      font-size: 0.95em;
     }
 
     th, td {
@@ -46,17 +49,58 @@
       background-color: #ffe4ec;
       border-radius: 10px;
       display: inline-block;
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
     }
 
     .formulario-repo label {
       display: block;
       margin: 10px 0;
+      text-align: left;
+    }
+
+    .formulario-repo select,
+    .formulario-repo button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .formulario-repo button {
+      background-color: #d63384;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .formulario-repo button:hover {
+      background-color: #b92d6d;
     }
 
     .footer {
       margin-top: 20px;
       font-size: 0.9em;
       color: #888;
+    }
+
+    @media (max-width: 600px) {
+      th, td {
+        font-size: 0.85em;
+        padding: 6px;
+      }
+
+      h1 {
+        font-size: 1.4em;
+      }
+
+      .formulario-repo {
+        padding: 15px;
+      }
     }
   </style>
 </head>
