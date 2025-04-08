@@ -11,85 +11,72 @@
   <table id="tabla-horarios">
     <thead>
       <tr>
-        <th>Nombre</th>
-        <th>Lunes</th>
-        <th>Martes</th>
-        <th>Miércoles</th>
-        <th>Jueves</th>
-        <th>Viernes</th>
-        <th>Sábado</th>
+        <th>Día</th>
+        <th>Mañana</th>
+        <th>Tarde</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td contenteditable="true">Carla</td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-      </tr>
-      <tr>
-        <td contenteditable="true">Silvi</td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-      </tr>
-      <tr>
-        <td contenteditable="true">Iara Romero</td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-      </tr>
-      <tr>
-        <td contenteditable="true">Maga</td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-      </tr>
-      <tr>
-        <td contenteditable="true">Iara Avila</td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-      </tr>
+      <tr><td>Lunes</td><td id="Lunes-mañana"></td><td id="Lunes-tarde"></td></tr>
+      <tr><td>Martes</td><td id="Martes-mañana"></td><td id="Martes-tarde"></td></tr>
+      <tr><td>Miércoles</td><td id="Miércoles-mañana"></td><td id="Miércoles-tarde"></td></tr>
+      <tr><td>Jueves</td><td id="Jueves-mañana"></td><td id="Jueves-tarde"></td></tr>
+      <tr><td>Viernes</td><td id="Viernes-mañana"></td><td id="Viernes-tarde"></td></tr>
+      <tr><td>Sábado</td><td id="Sábado-mañana"></td><td id="Sábado-tarde"></td></tr>
     </tbody>
   </table>
 
-  <!-- Botón para pedir reposición -->
-  <button onclick="abrirModal()" style="margin-top: 20px; background-color:#d63384; color:white; padding:10px 20px; border:none; border-radius:10px; font-size:16px;">Solicitar Reposición</button>
-
-  <!-- Modal -->
-  <div id="modalReposicion" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
-    <div style="background:white; padding:20px; border-radius:10px; max-width:300px; margin:auto;">
-      <h2 style="color:#d63384;">¿Quién te puede cubrir?</h2>
-      <select id="selectorPersona" style="width:100%; padding:10px; margin-bottom:10px;">
-        <option>Carla 💖 </option>
-        <option>Maga 💖 </option>
-        <option>Silvi 💖 </option>
-        <option>Iara Romero 💖 </option>
-        <option>Iara Avila 💖 </option>
+  <div class="formulario-repo">
+    <h2>Registrar Reposición</h2>
+    <label>Día:
+      <select id="dia">
+        <option>Lunes</option>
+        <option>Martes</option>
+        <option>Miércoles</option>
+        <option>Jueves</option>
+        <option>Viernes</option>
+        <option>Sábado</option>
       </select>
-      <button onclick="confirmarReposicion()" style="background-color:#d63384; color:white; border:none; padding:10px; width:100%; border-radius:10px;">Confirmar</button>
-    </div>
+    </label>
+
+    <label>Turno:
+      <select id="turno">
+        <option>Mañana</option>
+        <option>Tarde</option>
+      </select>
+    </label>
+
+    <label>Quién repone:
+      <select id="persona">
+        <option>Silvi</option>
+        <option>Carla</option>
+        <option>Maga</option>
+        <option>Iara Romero</option>
+        <option>Iara Avila</option>
+      </select>
+    </label>
+
+    <button onclick="registrarReposicion()">Registrar</button>
   </div>
 
-  <div class="footer">Hecho con 💖 por Iara</div>
+  <div class="footer">App creada por Iarita con 💖</div>
 
-  <script src="script.js"></script>
+  <script>
+    function registrarReposicion() {
+      const dia = document.getElementById("dia").value;
+      const turno = document.getElementById("turno").value.toLowerCase();
+      const persona = document.getElementById("persona").value;
+      const celdaId = `${dia}-${turno}`;
+      const celda = document.getElementById(celdaId);
+
+      if (celda) {
+        celda.innerText = `Reposición: ${persona}`;
+        alert(`Reposición registrada para ${dia} (${turno}): ${persona}`);
+      } else {
+        alert("No se encontró la celda para ese día y turno.");
+      }
+    }
+  </script>
 </body>
 </html>
 
