@@ -7,99 +7,75 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #fff0f5;
+      background-color: #ffeef5;
       color: #333;
       padding: 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
 
     h1 {
       text-align: center;
       color: #d63384;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #d63384;
+      margin: 30px 0 10px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     th, td {
-      border: 1px solid #ffb6c1;
+      border: 1px solid #ffc0cb;
       padding: 10px;
       text-align: center;
     }
 
     th {
-      background-color: #ffe4e1;
+      background-color: #ffe4ec;
       color: #d63384;
     }
 
-    .repo-titulo {
-      font-size: 1.2em;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: #d63384;
-      text-align: center;
+    td[contenteditable="true"] {
+      background-color: #fffafc;
+      cursor: text;
     }
 
-    .reposiciones {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .card-repo {
-      background-color: #fff;
-      border: 2px solid #ff69b4;
-      border-radius: 10px;
-      padding: 15px;
-      width: 250px;
-      box-shadow: 0 0 10px #ffd6e7;
-    }
-
-    .card-repo h3 {
-      margin: 0 0 10px 0;
-      color: #ff1493;
-    }
-
-    .card-repo p {
-      margin: 5px 0;
-      color: #555;
-    }
-
-    /* Estilo responsive para celular */
+    /* Responsive */
     @media screen and (max-width: 600px) {
-      table thead {
-        display: none;
+      table, thead, tbody, th, td, tr {
+        display: block;
       }
 
-      table, tbody, tr, td {
-        display: block;
-        width: 100%;
+      thead {
+        display: none;
       }
 
       tr {
         margin-bottom: 15px;
-        border: 1px solid #d63384;
+        border: 1px solid #ffc0cb;
         border-radius: 10px;
         padding: 10px;
+        background: #fff;
       }
 
       td {
         text-align: left;
-        padding-left: 50%;
         position: relative;
+        padding-left: 50%;
       }
 
       td::before {
         content: attr(data-label);
         position: absolute;
         left: 15px;
-        top: 10px;
         font-weight: bold;
         color: #d63384;
       }
@@ -107,9 +83,72 @@
   </style>
 </head>
 <body>
+
   <h1>Horarios TM RCIA 1 ❤️</h1>
 
-  <!-- TABLA DE HORARIOS -->
+  <h2>Turnos asignados</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+        <th>Sábado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Nombre">Carla</td>
+        <td contenteditable="true" data-label="Lunes"></td>
+        <td contenteditable="true" data-label="Martes"></td>
+        <td contenteditable="true" data-label="Miércoles"></td>
+        <td contenteditable="true" data-label="Jueves"></td>
+        <td contenteditable="true" data-label="Viernes"></td>
+        <td contenteditable="true" data-label="Sábado"></td>
+      </tr>
+      <tr>
+        <td data-label="Nombre">Silvi</td>
+        <td contenteditable="true" data-label="Lunes"></td>
+        <td contenteditable="true" data-label="Martes"></td>
+        <td contenteditable="true" data-label="Miércoles"></td>
+        <td contenteditable="true" data-label="Jueves"></td>
+        <td contenteditable="true" data-label="Viernes"></td>
+        <td contenteditable="true" data-label="Sábado"></td>
+      </tr>
+      <tr>
+        <td data-label="Nombre">Iara Romero</td>
+        <td contenteditable="true" data-label="Lunes"></td>
+        <td contenteditable="true" data-label="Martes"></td>
+        <td contenteditable="true" data-label="Miércoles"></td>
+        <td contenteditable="true" data-label="Jueves"></td>
+        <td contenteditable="true" data-label="Viernes"></td>
+        <td contenteditable="true" data-label="Sábado"></td>
+      </tr>
+      <tr>
+        <td data-label="Nombre">Maga</td>
+        <td contenteditable="true" data-label="Lunes"></td>
+        <td contenteditable="true" data-label="Martes"></td>
+        <td contenteditable="true" data-label="Miércoles"></td>
+        <td contenteditable="true" data-label="Jueves"></td>
+        <td contenteditable="true" data-label="Viernes"></td>
+        <td contenteditable="true" data-label="Sábado"></td>
+      </tr>
+      <tr>
+        <td data-label="Nombre">Iara Avila</td>
+        <td contenteditable="true" data-label="Lunes"></td>
+        <td contenteditable="true" data-label="Martes"></td>
+        <td contenteditable="true" data-label="Miércoles"></td>
+        <td contenteditable="true" data-label="Jueves"></td>
+        <td contenteditable="true" data-label="Viernes"></td>
+        <td contenteditable="true" data-label="Sábado"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Reposiciones registradas</h2>
   <table>
     <thead>
       <tr>
@@ -121,50 +160,37 @@
     <tbody>
       <tr>
         <td data-label="Día">Lunes</td>
-        <td data-label="Mañana">Silvi - 08:00</td>
-        <td data-label="Tarde">Iara Romero - 14:00</td>
+        <td contenteditable="true" data-label="Mañana">Silvi</td>
+        <td contenteditable="true" data-label="Tarde">Iara Avila</td>
       </tr>
       <tr>
         <td data-label="Día">Martes</td>
-        <td data-label="Mañana">Carla - 08:00</td>
-        <td data-label="Tarde">Maga - 14:00</td>
+        <td contenteditable="true" data-label="Mañana"></td>
+        <td contenteditable="true" data-label="Tarde"></td>
       </tr>
       <tr>
         <td data-label="Día">Miércoles</td>
-        <td data-label="Mañana">Maga - 08:00</td>
-        <td data-label="Tarde">Silvi - 14:00</td>
+        <td contenteditable="true" data-label="Mañana">Maga</td>
+        <td contenteditable="true" data-label="Tarde">Carla</td>
       </tr>
       <tr>
         <td data-label="Día">Jueves</td>
-        <td data-label="Mañana">Iara Romero - 08:00</td>
-        <td data-label="Tarde">Carla - 14:00</td>
+        <td contenteditable="true" data-label="Mañana"></td>
+        <td contenteditable="true" data-label="Tarde"></td>
       </tr>
       <tr>
         <td data-label="Día">Viernes</td>
-        <td data-label="Mañana">Silvi - 08:00</td>
-        <td data-label="Tarde">Iara Avila - 14:00</td>
+        <td contenteditable="true" data-label="Mañana"></td>
+        <td contenteditable="true" data-label="Tarde"></td>
       </tr>
       <tr>
         <td data-label="Día">Sábado</td>
-        <td data-label="Mañana">Maga - 08:00</td>
-        <td data-label="Tarde">Carla - 14:00</td>
+        <td contenteditable="true" data-label="Mañana"></td>
+        <td contenteditable="true" data-label="Tarde"></td>
       </tr>
     </tbody>
   </table>
 
-  <!-- SECCIÓN DE REPOSICIONES -->
-  <div class="repo-titulo">Reposiciones Registradas</div>
-  <div class="reposiciones">
-    <div class="card-repo">
-      <h3>Lunes</h3>
-      <p><strong>Mañana:</strong> Hecha por Silvi</p>
-      <p><strong>Tarde:</strong> Hecha por Iara Avila</p>
-    </div>
-    <div class="card-repo">
-      <h3>Miércoles</h3>
-      <p><strong>Mañana:</strong> Hecha por Maga</p>
-      <p><strong>Tarde:</strong> Hecha por Carla</p>
-    </div>
-  </div>
 </body>
 </html>
+
