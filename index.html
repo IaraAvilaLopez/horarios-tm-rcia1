@@ -6,115 +6,64 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-bottom: 40px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: center;
-    }
-    th {
-      background-color: #ffe6f0;
-    }
-    h2 {
-      color: #d63384;
-    }
-    .formulario-repo {
+      font-family: 'Segoe UI', sans-serif;
       background-color: #fff0f5;
-      padding: 15px;
-      border-radius: 10px;
-      max-width: 400px;
-      margin-top: 20px;
-    }
-    .footer {
-      margin-top: 40px;
-      font-style: italic;
-      color: gray;
+      color: #333;
+      padding: 20px;
       text-align: center;
     }
-    select, button {
-      margin-top: 10px;
-      padding: 8px;
-      width: 100%;
-      border-radius: 5px;
+
+    h1 {
+      color: #d63384;
+      margin-bottom: 30px;
+    }
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 800px;
+      background-color: white;
+      border: 2px solid #d63384;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #ffa6c9;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #ffb6c1;
+      color: white;
+    }
+
+    .formulario-repo {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #ffe4ec;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .formulario-repo label {
+      display: block;
+      margin: 10px 0;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
 </head>
 <body>
   <h1>Horarios TM RCIA 1 ❤️</h1>
 
-  <!-- Tabla 1: Horarios asignados por persona -->
-  <h2>Turnos asignados</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Lunes</th>
-        <th>Martes</th>
-        <th>Miércoles</th>
-        <th>Jueves</th>
-        <th>Viernes</th>
-        <th>Sábado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td contenteditable="true">Carla</td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-      </tr>
-      <tr>
-        <td contenteditable="true">Silvi</td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-      </tr>
-      <tr>
-        <td contenteditable="true">Iara Romero</td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-      </tr>
-      <tr>
-        <td contenteditable="true">Maga</td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-      </tr>
-      <tr>
-        <td contenteditable="true">Iara Avila</td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Tabla 2: Reposiciones por día y turno -->
-  <h2>Reposiciones registradas</h2>
-  <table id="tabla-repo">
+  <table id="tabla-reposiciones">
     <thead>
       <tr>
         <th>Día</th>
@@ -132,7 +81,6 @@
     </tbody>
   </table>
 
-  <!-- Formulario para registrar reposiciones -->
   <div class="formulario-repo">
     <h2>¿Quién hizo la reposición?</h2>
     <label>Día:
@@ -145,15 +93,15 @@
         <option>Sábado</option>
       </select>
     </label>
-    <br>
+
     <label>Turno:
       <select id="turno">
         <option>Mañana</option>
         <option>Tarde</option>
       </select>
     </label>
-    <br>
-    <label>Persona:
+
+    <label>Persona que repuso:
       <select id="persona">
         <option>Silvi</option>
         <option>Carla</option>
@@ -162,11 +110,11 @@
         <option>Iara Avila</option>
       </select>
     </label>
-    <br>
-    <button onclick="registrarReposicion()">Registrar</button>
+
+    <button onclick="registrarReposicion()">Registrar Reposición</button>
   </div>
 
-  <div class="footer">App creada con 💖 por Iarita</div>
+  <div class="footer">Hecho con 💖 por Iarita</div>
 
   <script>
     function registrarReposicion() {
@@ -177,8 +125,8 @@
       const celda = document.getElementById(celdaId);
 
       if (celda) {
-        celda.innerText = `Reposición ${turno} hecha por ${persona}`;
-        alert(`Registrado: ${persona} hizo la reposición el ${dia} (${turno})`);
+        celda.innerText = `Reposición por: ${persona}`;
+        alert(`Reposición registrada: ${dia} - ${turno} por ${persona}`);
       } else {
         alert("No se encontró la celda para ese día y turno.");
       }
