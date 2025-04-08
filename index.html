@@ -26,8 +26,8 @@
     </tbody>
   </table>
 
-  <div class="formulario-repo">
-    <h2>Registrar Reposición</h2>
+  <div class="formulario-repo" style="margin-top: 40px;">
+    <h2>¿Quién hizo la reposición?</h2>
 
     <label>Día:
       <select id="dia">
@@ -47,7 +47,7 @@
       </select>
     </label>
 
-    <label>Quién repone:
+    <label>Persona:
       <select id="persona">
         <option>Silvi</option>
         <option>Carla</option>
@@ -57,7 +57,7 @@
       </select>
     </label>
 
-    <button onclick="registrarReposicion()">Registrar</button>
+    <button onclick="registrarReposicion()">Registrar reposición</button>
   </div>
 
   <div class="footer">App creada por Iarita con 💖</div>
@@ -68,15 +68,15 @@
       const turno = document.getElementById("turno").value;
       const persona = document.getElementById("persona").value;
 
-      const turnoMinus = turno.toLowerCase();
-      const celdaId = `${dia}-${turnoMinus}`;
+      const turnoId = turno.toLowerCase(); // para construir el ID correctamente
+      const celdaId = `${dia}-${turnoId}`;
       const celda = document.getElementById(celdaId);
 
       if (celda) {
         celda.innerText = `Repo ${turno} hecho por ${persona}`;
-        alert(`Reposición registrada para ${dia} (${turno}): ${persona}`);
+        alert(`Se registró reposición del día ${dia} (${turno}) hecha por ${persona}`);
       } else {
-        alert("No se encontró la celda para ese día y turno.");
+        alert("Error: no se encontró la celda para ese día y turno.");
       }
     }
   </script>
