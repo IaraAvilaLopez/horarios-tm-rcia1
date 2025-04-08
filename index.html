@@ -28,6 +28,7 @@
 
   <div class="formulario-repo">
     <h2>Registrar Reposición</h2>
+
     <label>Día:
       <select id="dia">
         <option>Lunes</option>
@@ -64,13 +65,15 @@
   <script>
     function registrarReposicion() {
       const dia = document.getElementById("dia").value;
-      const turno = document.getElementById("turno").value.toLowerCase();
+      const turno = document.getElementById("turno").value;
       const persona = document.getElementById("persona").value;
-      const celdaId = `${dia}-${turno}`;
+
+      const turnoMinus = turno.toLowerCase();
+      const celdaId = `${dia}-${turnoMinus}`;
       const celda = document.getElementById(celdaId);
 
       if (celda) {
-        celda.innerText = `Reposición: ${persona}`;
+        celda.innerText = `Repo ${turno} hecho por ${persona}`;
         alert(`Reposición registrada para ${dia} (${turno}): ${persona}`);
       } else {
         alert("No se encontró la celda para ese día y turno.");
