@@ -2,195 +2,163 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Horarios TM RCIA 1 ❤️</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
       background-color: #ffeef5;
-      color: #333;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #d63384;
+      margin: 0;
+      padding: 0;
     }
 
     h1 {
-      text-align: center;
-      color: #d63384;
-      margin-bottom: 20px;
+      margin-top: 40px;
+      font-size: 2rem;
     }
 
     h2 {
-      text-align: center;
-      color: #d63384;
-      margin: 30px 0 10px;
+      margin-top: 30px;
+      font-size: 1.5rem;
     }
 
     table {
-      width: 100%;
+      margin: 20px auto;
       border-collapse: collapse;
-      margin-bottom: 30px;
+      width: 90%;
+      max-width: 900px;
     }
 
     th, td {
-      border: 1px solid #ffc0cb;
+      border: 1px solid #f5b3c9;
       padding: 10px;
       text-align: center;
     }
 
     th {
-      background-color: #ffe4ec;
-      color: #d63384;
+      background-color: #ffd6e3;
+    }
+
+    td {
+      background-color: #fff0f6;
     }
 
     td[contenteditable="true"] {
-      background-color: #fffafc;
       cursor: text;
     }
 
-    /* Responsive */
-    @media screen and (max-width: 600px) {
-      table, thead, tbody, th, td, tr {
+    /* ✅ ESTO ES SOLO PARA CELULAR (pantallas menores a 600px) */
+    @media (max-width: 600px) {
+      table {
+        font-size: 0.9rem;
+        overflow-x: auto;
         display: block;
-      }
-
-      thead {
-        display: none;
-      }
-
-      tr {
-        margin-bottom: 15px;
-        border: 1px solid #ffc0cb;
-        border-radius: 10px;
-        padding: 10px;
-        background: #fff;
-      }
-
-      td {
-        text-align: left;
-        position: relative;
-        padding-left: 50%;
-      }
-
-      td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 15px;
-        font-weight: bold;
-        color: #d63384;
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
-
   <h1>Horarios TM RCIA 1 ❤️</h1>
 
   <h2>Turnos asignados</h2>
   <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Lunes</th>
-        <th>Martes</th>
-        <th>Miércoles</th>
-        <th>Jueves</th>
-        <th>Viernes</th>
-        <th>Sábado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-label="Nombre">Carla</td>
-        <td contenteditable="true" data-label="Lunes"></td>
-        <td contenteditable="true" data-label="Martes"></td>
-        <td contenteditable="true" data-label="Miércoles"></td>
-        <td contenteditable="true" data-label="Jueves"></td>
-        <td contenteditable="true" data-label="Viernes"></td>
-        <td contenteditable="true" data-label="Sábado"></td>
-      </tr>
-      <tr>
-        <td data-label="Nombre">Silvi</td>
-        <td contenteditable="true" data-label="Lunes"></td>
-        <td contenteditable="true" data-label="Martes"></td>
-        <td contenteditable="true" data-label="Miércoles"></td>
-        <td contenteditable="true" data-label="Jueves"></td>
-        <td contenteditable="true" data-label="Viernes"></td>
-        <td contenteditable="true" data-label="Sábado"></td>
-      </tr>
-      <tr>
-        <td data-label="Nombre">Iara Romero</td>
-        <td contenteditable="true" data-label="Lunes"></td>
-        <td contenteditable="true" data-label="Martes"></td>
-        <td contenteditable="true" data-label="Miércoles"></td>
-        <td contenteditable="true" data-label="Jueves"></td>
-        <td contenteditable="true" data-label="Viernes"></td>
-        <td contenteditable="true" data-label="Sábado"></td>
-      </tr>
-      <tr>
-        <td data-label="Nombre">Maga</td>
-        <td contenteditable="true" data-label="Lunes"></td>
-        <td contenteditable="true" data-label="Martes"></td>
-        <td contenteditable="true" data-label="Miércoles"></td>
-        <td contenteditable="true" data-label="Jueves"></td>
-        <td contenteditable="true" data-label="Viernes"></td>
-        <td contenteditable="true" data-label="Sábado"></td>
-      </tr>
-      <tr>
-        <td data-label="Nombre">Iara Avila</td>
-        <td contenteditable="true" data-label="Lunes"></td>
-        <td contenteditable="true" data-label="Martes"></td>
-        <td contenteditable="true" data-label="Miércoles"></td>
-        <td contenteditable="true" data-label="Jueves"></td>
-        <td contenteditable="true" data-label="Viernes"></td>
-        <td contenteditable="true" data-label="Sábado"></td>
-      </tr>
-    </tbody>
+    <tr>
+      <th>Nombre</th>
+      <th>Lunes</th>
+      <th>Martes</th>
+      <th>Miércoles</th>
+      <th>Jueves</th>
+      <th>Viernes</th>
+      <th>Sábado</th>
+    </tr>
+    <tr>
+      <td>Carla</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Silvi</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Iara Romero</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Maga</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Iara Avila</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
   </table>
 
   <h2>Reposiciones registradas</h2>
   <table>
-    <thead>
-      <tr>
-        <th>Día</th>
-        <th>Mañana</th>
-        <th>Tarde</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-label="Día">Lunes</td>
-        <td contenteditable="true" data-label="Mañana">Silvi</td>
-        <td contenteditable="true" data-label="Tarde">Iara Avila</td>
-      </tr>
-      <tr>
-        <td data-label="Día">Martes</td>
-        <td contenteditable="true" data-label="Mañana"></td>
-        <td contenteditable="true" data-label="Tarde"></td>
-      </tr>
-      <tr>
-        <td data-label="Día">Miércoles</td>
-        <td contenteditable="true" data-label="Mañana">Maga</td>
-        <td contenteditable="true" data-label="Tarde">Carla</td>
-      </tr>
-      <tr>
-        <td data-label="Día">Jueves</td>
-        <td contenteditable="true" data-label="Mañana"></td>
-        <td contenteditable="true" data-label="Tarde"></td>
-      </tr>
-      <tr>
-        <td data-label="Día">Viernes</td>
-        <td contenteditable="true" data-label="Mañana"></td>
-        <td contenteditable="true" data-label="Tarde"></td>
-      </tr>
-      <tr>
-        <td data-label="Día">Sábado</td>
-        <td contenteditable="true" data-label="Mañana"></td>
-        <td contenteditable="true" data-label="Tarde"></td>
-      </tr>
-    </tbody>
+    <tr>
+      <th>Día</th>
+      <th>Mañana</th>
+      <th>Tarde</th>
+    </tr>
+    <tr>
+      <td>Lunes</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Martes</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Miércoles</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Jueves</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Viernes</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Sábado</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
   </table>
-
 </body>
 </html>
 
