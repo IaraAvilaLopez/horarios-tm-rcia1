@@ -4,11 +4,87 @@
   <meta charset="UTF-8">
   <title>Horarios TM RCIA 1 ❤️</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .repo-info {
+      font-size: 0.9em;
+      color: #d63384;
+      margin-top: 5px;
+    }
+
+    table {
+      margin-bottom: 40px;
+    }
+  </style>
 </head>
 <body>
   <h1>Horarios TM RCIA 1 ❤️</h1>
 
-  <table id="tabla-horarios">
+  <!-- Tabla editable por persona -->
+  <h2>Turnos asignados</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+        <th>Sábado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td contenteditable="true">Carla</td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Silvi</td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Iara Romero</td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Maga</td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Iara Avila</td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Tabla de reposiciones -->
+  <h2>Reposiciones registradas</h2>
+  <table id="tabla-repo">
     <thead>
       <tr>
         <th>Día</th>
@@ -26,9 +102,9 @@
     </tbody>
   </table>
 
-  <div class="formulario-repo" style="margin-top: 40px;">
+  <!-- Formulario para registrar reposición -->
+  <div class="formulario-repo">
     <h2>¿Quién hizo la reposición?</h2>
-
     <label>Día:
       <select id="dia">
         <option>Lunes</option>
@@ -57,26 +133,24 @@
       </select>
     </label>
 
-    <button onclick="registrarReposicion()">Registrar reposición</button>
+    <button onclick="registrarReposicion()">Registrar</button>
   </div>
 
-  <div class="footer">App creada por Iarita con 💖</div>
+  <div class="footer">Hecho con 💖 por Iarita</div>
 
   <script>
     function registrarReposicion() {
       const dia = document.getElementById("dia").value;
-      const turno = document.getElementById("turno").value;
+      const turno = document.getElementById("turno").value.toLowerCase();
       const persona = document.getElementById("persona").value;
-
-      const turnoId = turno.toLowerCase();
-      const celdaId = `${dia}-${turnoId}`;
+      const celdaId = `${dia}-${turno}`;
       const celda = document.getElementById(celdaId);
 
       if (celda) {
-        celda.innerText = `Repo ${turno} hecho por ${persona}`;
-        alert(`Se registró reposición del día ${dia} (${turno}) hecha por ${persona}`);
+        celda.innerText = `Repo ${turno} hecha por ${persona}`;
+        alert(`Registrado: ${persona} hizo repo el ${dia} (${turno})`);
       } else {
-        alert("Error: no se encontró la celda para ese día y turno.");
+        alert("No se encontró la celda para ese día y turno.");
       }
     }
   </script>
