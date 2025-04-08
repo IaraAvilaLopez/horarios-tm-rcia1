@@ -111,4 +111,12 @@ button:hover {
     color: #d63384;
   }
 }
+@media (max-width: 600px) {
+  table {
+    font-size: 0.9rem;
+    overflow-x: auto;
+    display: block;
+    width: 100%;
+  }
+}
 
