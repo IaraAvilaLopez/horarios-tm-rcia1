@@ -1,106 +1,170 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Horarios TM RCIA 1 ❤️</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d63384;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+
+    th, td {
+      border: 1px solid #ffb6c1;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #ffe4e1;
+      color: #d63384;
+    }
+
+    .repo-titulo {
+      font-size: 1.2em;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #d63384;
+      text-align: center;
+    }
+
+    .reposiciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .card-repo {
+      background-color: #fff;
+      border: 2px solid #ff69b4;
+      border-radius: 10px;
+      padding: 15px;
+      width: 250px;
+      box-shadow: 0 0 10px #ffd6e7;
+    }
+
+    .card-repo h3 {
+      margin: 0 0 10px 0;
+      color: #ff1493;
+    }
+
+    .card-repo p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    /* Estilo responsive para celulares */
+    @media screen and (max-width: 600px) {
+      table thead {
+        display: none;
+      }
+
+      table, tbody, tr, td {
+        display: block;
+        width: 100%;
+      }
+
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #d63384;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      td {
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        font-weight: bold;
+        color: #d63384;
+      }
+    }
+  </style>
 </head>
 <body>
   <h1>Horarios TM RCIA 1 ❤️</h1>
 
-  <!-- Tabla de horarios -->
-  <table id="tabla-horarios">
+  <!-- TABLA DE HORARIOS -->
+  <table>
     <thead>
       <tr>
         <th>Día</th>
-        <th>Mañana</th>
-        <th>Tarde</th>
+        <th>Mañana (Horario + Nombre)</th>
+        <th>Tarde (Horario + Nombre)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td data-label="Día">Lunes</td>
-        <td id="Lunes-mañana" data-label="Mañana"></td>
-        <td id="Lunes-tarde" data-label="Tarde"></td>
+        <td data-label="Mañana">08:00 - 12:00<br>Silvi</td>
+        <td data-label="Tarde">16:00 - 20:00<br>Iara Romero</td>
       </tr>
       <tr>
         <td data-label="Día">Martes</td>
-        <td id="Martes-mañana" data-label="Mañana"></td>
-        <td id="Martes-tarde" data-label="Tarde"></td>
+        <td data-label="Mañana">08:00 - 12:00<br>Carla</td>
+        <td data-label="Tarde">16:00 - 20:00<br>Maga</td>
       </tr>
       <tr>
         <td data-label="Día">Miércoles</td>
-        <td id="Miércoles-mañana" data-label="Mañana"></td>
-        <td id="Miércoles-tarde" data-label="Tarde"></td>
+        <td data-label="Mañana">08:00 - 12:00<br>Maga</td>
+        <td data-label="Tarde">16:00 - 20:00<br>Silvi</td>
       </tr>
       <tr>
         <td data-label="Día">Jueves</td>
-        <td id="Jueves-mañana" data-label="Mañana"></td>
-        <td id="Jueves-tarde" data-label="Tarde"></td>
+        <td data-label="Mañana">08:00 - 12:00<br>Iara Romero</td>
+        <td data-label="Tarde">16:00 - 20:00<br>Carla</td>
       </tr>
       <tr>
         <td data-label="Día">Viernes</td>
-        <td id="Viernes-mañana" data-label="Mañana"></td>
-        <td id="Viernes-tarde" data-label="Tarde"></td>
+        <td data-label="Mañana">08:00 - 12:00<br>Silvi</td>
+        <td data-label="Tarde">16:00 - 20:00<br>Iara Avila</td>
       </tr>
       <tr>
         <td data-label="Día">Sábado</td>
-        <td id="Sábado-mañana" data-label="Mañana"></td>
-        <td id="Sábado-tarde" data-label="Tarde"></td>
+        <td data-label="Mañana">08:00 - 12:00<br>Maga</td>
+        <td data-label="Tarde">16:00 - 20:00<br>Carla</td>
       </tr>
     </tbody>
   </table>
 
-  <!-- Formulario de reposición -->
-  <div class="reposición-form">
-    <h2>¿Quién hizo la reposición?</h2>
-    <label for="dia">Día:</label>
-    <select id="dia">
-      <option>Lunes</option>
-      <option>Martes</option>
-      <option>Miércoles</option>
-      <option>Jueves</option>
-      <option>Viernes</option>
-      <option>Sábado</option>
-    </select>
-    
-    <label for="turno">Turno:</label>
-    <select id="turno">
-      <option>Mañana</option>
-      <option>Tarde</option>
-    </select>
-    
-    <label for="persona">Persona que repuso:</label>
-    <select id="persona">
-      <option>Iara Avila</option>
-      <option>Carla</option>
-      <option>Silvi</option>
-      <option>Iara Romero</option>
-      <option>Maga</option>
-    </select>
-
-    <button onclick="registrarReposicion()">Registrar Reposición</button>
+  <!-- SECCIÓN DE REPOSICIONES -->
+  <div class="repo-titulo">Reposiciones Registradas</div>
+  <div class="reposiciones">
+    <div class="card-repo">
+      <h3>Lunes</h3>
+      <p><strong>Mañana:</strong> Hecha por Silvi</p>
+      <p><strong>Tarde:</strong> Hecha por Iara Avila</p>
+    </div>
+    <div class="card-repo">
+      <h3>Miércoles</h3>
+      <p><strong>Mañana:</strong> Hecha por Maga</p>
+      <p><strong>Tarde:</strong> Hecha por Carla</p>
+    </div>
   </div>
-
-  <p style="text-align: center;">Hecho con 💖 por Iarita</p>
-
-  <script>
-    function registrarReposicion() {
-      const dia = document.getElementById("dia").value;
-      const turno = document.getElementById("turno").value.toLowerCase();
-      const persona = document.getElementById("persona").value;
-
-      const celdaId = `${dia}-${turno}`;
-      const celda = document.getElementById(celdaId);
-
-      if (celda) {
-        celda.textContent = persona;
-      } else {
-        alert("No se pudo encontrar la celda.");
-      }
-    }
-  </script>
 </body>
 </html>
