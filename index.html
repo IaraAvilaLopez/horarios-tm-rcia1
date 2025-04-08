@@ -5,21 +5,51 @@
   <title>Horarios TM RCIA 1 ❤️</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .repo-info {
-      font-size: 0.9em;
-      color: #d63384;
-      margin-top: 5px;
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
     }
-
     table {
+      border-collapse: collapse;
+      width: 100%;
       margin-bottom: 40px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #ffe6f0;
+    }
+    h2 {
+      color: #d63384;
+    }
+    .formulario-repo {
+      background-color: #fff0f5;
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin-top: 20px;
+    }
+    .footer {
+      margin-top: 40px;
+      font-style: italic;
+      color: gray;
+      text-align: center;
+    }
+    select, button {
+      margin-top: 10px;
+      padding: 8px;
+      width: 100%;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
   <h1>Horarios TM RCIA 1 ❤️</h1>
 
-  <!-- Tabla editable por persona -->
+  <!-- Tabla 1: Horarios asignados por persona -->
   <h2>Turnos asignados</h2>
   <table>
     <thead>
@@ -82,7 +112,7 @@
     </tbody>
   </table>
 
-  <!-- Tabla de reposiciones -->
+  <!-- Tabla 2: Reposiciones por día y turno -->
   <h2>Reposiciones registradas</h2>
   <table id="tabla-repo">
     <thead>
@@ -102,7 +132,7 @@
     </tbody>
   </table>
 
-  <!-- Formulario para registrar reposición -->
+  <!-- Formulario para registrar reposiciones -->
   <div class="formulario-repo">
     <h2>¿Quién hizo la reposición?</h2>
     <label>Día:
@@ -115,14 +145,14 @@
         <option>Sábado</option>
       </select>
     </label>
-
+    <br>
     <label>Turno:
       <select id="turno">
         <option>Mañana</option>
         <option>Tarde</option>
       </select>
     </label>
-
+    <br>
     <label>Persona:
       <select id="persona">
         <option>Silvi</option>
@@ -132,11 +162,11 @@
         <option>Iara Avila</option>
       </select>
     </label>
-
+    <br>
     <button onclick="registrarReposicion()">Registrar</button>
   </div>
 
-  <div class="footer">Hecho con 💖 por Iarita</div>
+  <div class="footer">App creada con 💖 por Iarita</div>
 
   <script>
     function registrarReposicion() {
@@ -147,8 +177,8 @@
       const celda = document.getElementById(celdaId);
 
       if (celda) {
-        celda.innerText = `Repo ${turno} hecha por ${persona}`;
-        alert(`Registrado: ${persona} hizo repo el ${dia} (${turno})`);
+        celda.innerText = `Reposición ${turno} hecha por ${persona}`;
+        alert(`Registrado: ${persona} hizo la reposición el ${dia} (${turno})`);
       } else {
         alert("No se encontró la celda para ese día y turno.");
       }
