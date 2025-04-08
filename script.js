@@ -12,3 +12,12 @@ window.onload = () => {
 tabla.addEventListener("input", () => {
   localStorage.setItem("horariosTM", tabla.innerHTML);
 });
+// Reposición automática
+function abrirModal() {
+  document.getElementById("modalReposicion").style.display = "flex";
+}
+
+function confirmarReposicion() {
+  const persona = document.getElementById("selectorPersona").value;
+  alert("Reposición solicitada a: " + persona);
+  document.getElementById("modalReposicion
