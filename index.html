@@ -1,113 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Horarios TM RCIA 1 ❤️</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff0f5;
-      color: #333;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      color: #d63384;
-      margin-bottom: 30px;
-      font-size: 1.8em;
-    }
-
-    table {
-      margin: 0 auto;
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 800px;
-      background-color: white;
-      border: 2px solid #d63384;
-      border-radius: 10px;
-      overflow: hidden;
-      font-size: 0.95em;
-    }
-
-    th, td {
-      border: 1px solid #ffa6c9;
-      padding: 10px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #ffb6c1;
-      color: white;
-    }
-
-    .formulario-repo {
-      margin-top: 30px;
-      padding: 20px;
-      background-color: #ffe4ec;
-      border-radius: 10px;
-      display: inline-block;
-      width: 100%;
-      max-width: 400px;
-      box-sizing: border-box;
-    }
-
-    .formulario-repo label {
-      display: block;
-      margin: 10px 0;
-      text-align: left;
-    }
-
-    .formulario-repo select,
-    .formulario-repo button {
-      width: 100%;
-      padding: 10px;
-      font-size: 1em;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    .formulario-repo button {
-      background-color: #d63384;
-      color: white;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .formulario-repo button:hover {
-      background-color: #b92d6d;
-    }
-
-    .footer {
-      margin-top: 20px;
-      font-size: 0.9em;
-      color: #888;
-    }
-
-    @media (max-width: 600px) {
-      th, td {
-        font-size: 0.85em;
-        padding: 6px;
-      }
-
-      h1 {
-        font-size: 1.4em;
-      }
-
-      .formulario-repo {
-        padding: 15px;
-      }
-    }
-  </style>
 </head>
 <body>
   <h1>Horarios TM RCIA 1 ❤️</h1>
 
-  <table id="tabla-reposiciones">
+  <!-- Tabla de horarios -->
+  <table id="tabla-horarios">
     <thead>
       <tr>
         <th>Día</th>
@@ -116,66 +20,87 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td>Lunes</td><td id="Lunes-mañana"></td><td id="Lunes-tarde"></td></tr>
-      <tr><td>Martes</td><td id="Martes-mañana"></td><td id="Martes-tarde"></td></tr>
-      <tr><td>Miércoles</td><td id="Miércoles-mañana"></td><td id="Miércoles-tarde"></td></tr>
-      <tr><td>Jueves</td><td id="Jueves-mañana"></td><td id="Jueves-tarde"></td></tr>
-      <tr><td>Viernes</td><td id="Viernes-mañana"></td><td id="Viernes-tarde"></td></tr>
-      <tr><td>Sábado</td><td id="Sábado-mañana"></td><td id="Sábado-tarde"></td></tr>
+      <tr>
+        <td data-label="Día">Lunes</td>
+        <td id="Lunes-mañana" data-label="Mañana"></td>
+        <td id="Lunes-tarde" data-label="Tarde"></td>
+      </tr>
+      <tr>
+        <td data-label="Día">Martes</td>
+        <td id="Martes-mañana" data-label="Mañana"></td>
+        <td id="Martes-tarde" data-label="Tarde"></td>
+      </tr>
+      <tr>
+        <td data-label="Día">Miércoles</td>
+        <td id="Miércoles-mañana" data-label="Mañana"></td>
+        <td id="Miércoles-tarde" data-label="Tarde"></td>
+      </tr>
+      <tr>
+        <td data-label="Día">Jueves</td>
+        <td id="Jueves-mañana" data-label="Mañana"></td>
+        <td id="Jueves-tarde" data-label="Tarde"></td>
+      </tr>
+      <tr>
+        <td data-label="Día">Viernes</td>
+        <td id="Viernes-mañana" data-label="Mañana"></td>
+        <td id="Viernes-tarde" data-label="Tarde"></td>
+      </tr>
+      <tr>
+        <td data-label="Día">Sábado</td>
+        <td id="Sábado-mañana" data-label="Mañana"></td>
+        <td id="Sábado-tarde" data-label="Tarde"></td>
+      </tr>
     </tbody>
   </table>
 
-  <div class="formulario-repo">
+  <!-- Formulario de reposición -->
+  <div class="reposición-form">
     <h2>¿Quién hizo la reposición?</h2>
-    <label>Día:
-      <select id="dia">
-        <option>Lunes</option>
-        <option>Martes</option>
-        <option>Miércoles</option>
-        <option>Jueves</option>
-        <option>Viernes</option>
-        <option>Sábado</option>
-      </select>
-    </label>
-
-    <label>Turno:
-      <select id="turno">
-        <option>Mañana</option>
-        <option>Tarde</option>
-      </select>
-    </label>
-
-    <label>Persona que repuso:
-      <select id="persona">
-        <option>Silvi</option>
-        <option>Carla</option>
-        <option>Maga</option>
-        <option>Iara Romero</option>
-        <option>Iara Avila</option>
-      </select>
-    </label>
+    <label for="dia">Día:</label>
+    <select id="dia">
+      <option>Lunes</option>
+      <option>Martes</option>
+      <option>Miércoles</option>
+      <option>Jueves</option>
+      <option>Viernes</option>
+      <option>Sábado</option>
+    </select>
+    
+    <label for="turno">Turno:</label>
+    <select id="turno">
+      <option>Mañana</option>
+      <option>Tarde</option>
+    </select>
+    
+    <label for="persona">Persona que repuso:</label>
+    <select id="persona">
+      <option>Iara Avila</option>
+      <option>Carla</option>
+      <option>Silvi</option>
+      <option>Iara Romero</option>
+      <option>Maga</option>
+    </select>
 
     <button onclick="registrarReposicion()">Registrar Reposición</button>
   </div>
 
-  <div class="footer">Hecho con 💖 por Iarita</div>
+  <p style="text-align: center;">Hecho con 💖 por Iarita</p>
 
   <script>
     function registrarReposicion() {
       const dia = document.getElementById("dia").value;
       const turno = document.getElementById("turno").value.toLowerCase();
       const persona = document.getElementById("persona").value;
+
       const celdaId = `${dia}-${turno}`;
       const celda = document.getElementById(celdaId);
 
       if (celda) {
-        celda.innerText = `Reposición por: ${persona}`;
-        alert(`Reposición registrada: ${dia} - ${turno} por ${persona}`);
+        celda.textContent = persona;
       } else {
-        alert("No se encontró la celda para ese día y turno.");
+        alert("No se pudo encontrar la celda.");
       }
     }
   </script>
 </body>
 </html>
-
