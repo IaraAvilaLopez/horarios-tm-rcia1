@@ -47,3 +47,41 @@ td[contenteditable="true"]:hover {
   font-size: 0.9em;
   color: #888;
 }
+/* --- Tabla responsive --- */
+@media screen and (max-width: 600px) {
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  thead {
+    display: none; /* Oculta los encabezados */
+  }
+
+  tbody, tr, td {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #fff;
+    background-color: #fff0f5;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  td {
+    text-align: left;
+    padding: 10px;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #d63384;
+  }
+}
